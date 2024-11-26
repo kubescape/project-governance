@@ -22,6 +22,10 @@ You're more than welcome to join!
 
 If you want to add a discussion point to the meeting, please use [this document](https://docs.google.com/document/d/1X_eyhPzJvb4ascVQ2e0jN87LAvq7lTuXT5d4gQxi8us/edit?usp=sharing) to add an item. You can also see here the summary of previous discussions. 🖥️
 
+## Maintainer meetings
+
+We hold [maintainer meetings](https://docs.google.com/document/d/1VfwyeYvixryyXiVmT7SoKNJJ0JwdNTzocUAJkTZjKdk/edit?usp=sharing) every second Monday every three month (for example, 9th of December 2024 then 10th of March 2025 and etc). These meetings are not public, but OFC resolutions and the meeting document is.
+
 ## Conferences
 
 We are taking an active part in the CNCF community attending, speaking, and organizing Kubecons, KCDs and other meetups .
