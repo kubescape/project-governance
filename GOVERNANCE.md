@@ -17,13 +17,14 @@ Please follow our [code of conduct](CODE_OF_CONDUCT.md) in all of your interacti
 - Maintainers are chosen based on their ongoing contributions and their demonstrated commitment to the project.
 - Everyone who had at least 5 code contribution in the last 12 month can submit her/himself for joining the maintainer team
 - Maintainers who have not taken part in the project work (code, reviews, discussions) for 12 month are automaticaly removed from the maintainer team
-
+- Maintainers are approved by a simple majority of the existing maintainer team on the quaterly maintainer meeting
 
 ### Committers
 
 - Committers are contributors who have made significant and consistent contributions to the project.
 - They have the ability to merge minor pull requests if assigned by maintainers.
 - A contributor can be proposed as a committer by any existing maintainer. The proposal will be reviewed and voted on by the existing maintainers.
+- Committers are approved by a simple majority of the existing maintainer team on the quaterly maintainer meeting
 
 ### Community Members
 
@@ -67,3 +68,8 @@ Please follow our [code of conduct](CODE_OF_CONDUCT.md) in all of your interacti
 ## Changes to the Governance Document
 
 Proposed changes to this governance document should follow the same process as any other code change to the Kubescape project (see "Proposing Changes").
+
+
+## Maintainer meetings
+
+We hold [maintainer meetings](https://docs.google.com/document/d/1VfwyeYvixryyXiVmT7SoKNJJ0JwdNTzocUAJkTZjKdk/edit?usp=sharing) every second Monday every three month (for example, 9th of December 2024 then 10th of March 2025 and etc). These meetings are not public, but OFC resolutions and the meeting document is.
