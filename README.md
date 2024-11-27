@@ -26,7 +26,7 @@ See here a list of official adopters [here](ADOPTERS.md), if you have a use case
 
 * [Governance](GOVERNANCE.md)
 * [Maintainers](MAINTAINERS.md)
-* [Licence](LICENSE)
+* [License](LICENSE)
 
 
 ## Wall of fame
