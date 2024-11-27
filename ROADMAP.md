@@ -27,7 +27,7 @@ The items in the Kubescape roadmap are split into three major groups based on th
 ### Core Platform Enhancements
 - [x] Storage and Node-agent memory and CPU consumption
 - [x] Improve image scanning performance and resource utilization
-- [ ] Deprecation of Konnector and Gateway components (as Synchronizer take over them)
+- [ ] Deprecation of Kollektor and Gateway components (as Synchronizer takes over them)
 - [ ] Scanning container image on the host filesystem
 
 ### Security Features
