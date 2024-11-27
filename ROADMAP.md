@@ -17,7 +17,7 @@ The features serve different stages of the workflow of the users and labeled as 
 
 The items in the Kubescape roadmap are split into three major groups based on the feature planning maturity:
 
-* [Planning](#planning-) - we have tickets open for these issues with a more or less clear vision of design. They are being executed or should be in the next 6 month.
+* [Planning](#planning-) - we have tickets open for these issues with a more or less clear vision of design.
 * [Backlog](#backlog-)  -  features that were discussed at a high level but are not ready for development.
 * [Wishlist](#wishlist-) -  features that we are dreaming of in 😀 and want to push them gradually forward.
 
