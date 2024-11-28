@@ -81,14 +81,6 @@ Please follow the [instructions here](https://github.com/kubescape/kubescape/wik
 3. Open Pull Request to the `master`/`main` branch.
 4. We will merge the Pull Request once you have the sign-off.
 
-<!-- Ben/Rotem/Matthias the section below was in the CNCF template and seems important to me. WDYT?
-
-## Development Environment Setup
-
-[Instructions](https://contribute.cncf.io/maintainers/github/templates/required/contributing/#development-environment-setup)
-
-⚠️ **Explain how to set up a development environment**-->
-
 ## Sign your commits
 
 ### Developer Certificate of Origin
