@@ -9,7 +9,6 @@
   * [Pull request process](#pull-request-process)
   * [Sign your commits](#sign-your-commits)
 
-
 Welcome! It's awesome that you are considering contributing to Kubescape! Contributing is important and we welcome your efforts. 💖
 
 As you get started, you are in the best position to give us feedback on areas of
@@ -35,8 +34,6 @@ We welcome many different types of contributions including:
 * Web design
 * Communications / Social Media / Blog Posts
 * Release management
-
-<!--Ben/Rotem/Matthias this language is from the CNCF suggested template, it incudes much more than we had in the original file, please indicate if something should be removed-->
 
 Not everything happens through a GitHub pull request. You can find all the ways to become active in the Kubescape community [here](COMMUNITY.md)  
 
