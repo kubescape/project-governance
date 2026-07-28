@@ -1,8 +1,8 @@
 [![GitHub](https://img.shields.io/github/license/kubescape/kubescape)](https://github.com/kubescape/kubescape/blob/master/LICENSE)
-[![CNCF](https://shields.io/badge/CNCF-Incubating%20project-blue?logo=linux-foundation&style=flat)](https://landscape.cncf.io/card-mode?project=incubating&selected=kubescape)
+[![CNCF](https://shields.io/badge/CNCF-Incubating%20project-blue?logo=linux-foundation&style=flat)](https://landscape.cncf.io/?item=provisioning--security-compliance--kubescape)
 [![Stars](https://img.shields.io/github/stars/kubescape/kubescape?style=social)](https://github.com/kubescape/kubescape/stargazers)
 [![Twitter Follow](https://img.shields.io/twitter/follow/kubescape?style=social)](https://twitter.com/kubescape)
-[![Slack](https://img.shields.io/badge/slack-kubescape-blueviolet?logo=slack)](https://cloud-native.slack.com/archives/C04EY3ZF9GE)
+[![Slack](https://img.shields.io/badge/slack-kubescape-blueviolet?logo=slack)](https://cloud-native.slack.com/messages/kubescape)
 
 # Kubescape project information
 
