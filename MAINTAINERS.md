@@ -11,7 +11,7 @@ The following table lists the Kubescape project core maintainers:
 | [Bezalel Brandwine](https://www.linkedin.com/in/bezalel-brandwine) | [@Bezbran](https://github.com/Bezbran) | [Softwine](https://softwine.net/)  | 2024-12-09 |
 
 
-The following table lists the Kubescape project commiters:
+The following table lists the Kubescape project triagers:
 | Name | GitHub | Organization | Added/Renewed On |
 | --- | --- | --- | --- |
 | [Amit Schendel](https://www.linkedin.com/in/matthias-bertschy-b427b815/) | [@amitschendel](https://github.com/amitschendel) | [ARMO](https://www.armosec.io/) | 2024-01-01 |

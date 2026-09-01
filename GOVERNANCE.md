@@ -19,12 +19,16 @@ Please follow our [code of conduct](CODE_OF_CONDUCT.md) in all of your interacti
 - Maintainers who have not taken part in the project work (code, reviews, discussions) for 12 month are automaticaly removed from the maintainer team
 - Maintainers are approved by a simple majority of the existing maintainer team on the quaterly maintainer meeting
 
-### Committers
+### Triagers
 
-- Committers are contributors who have made significant and consistent contributions to the project.
-- They have the ability to merge minor pull requests if assigned by maintainers.
-- A contributor can be proposed as a committer by any existing maintainer. The proposal will be reviewed and voted on by the existing maintainers.
-- Committers are approved by a simple majority of the existing maintainer team on the quaterly maintainer meeting
+- Triagers are contributors who assist the maintainers with project management and backlog organization.
+- They keep the backlog in order: applying labels and milestones, assigning issues and pull requests, closing and reopening them, requesting reviews, and asking clarifying questions on new reports.
+- Triagers do not merge pull requests. Merging remains the responsibility of the maintainers.
+- Triagers are granted the GitHub *Triage* permission on the repositories under governance.
+- A contributor can be proposed as a triager by any existing maintainer. The proposal will be reviewed and voted on by the existing maintainers.
+- Everyone who has been performing triage work (organizing the backlog, responding to new issues, reproducing bugs) for at least one month can submit her/himself for joining the triager team
+- Triagers who have not taken part in the project work (triage, code, reviews, discussions) for 12 month are automatically removed from the triager team
+- Triagers are approved by a simple majority of the existing maintainer team on the quarterly maintainer meeting
 
 ### Community Members
 
@@ -36,7 +40,7 @@ Please follow our [code of conduct](CODE_OF_CONDUCT.md) in all of your interacti
 
 1. Open an issue on the project repository to discuss the proposed change.
 2. Once there is consensus around the proposed change, create a pull request.
-3. Pull requests will be reviewed by committers and/or maintainers.
+3. Pull requests will be reviewed by the maintainers. Triagers may assist by applying labels, assigning reviewers and asking clarifying questions.
 4. Once the pull request has received approval, it can be merged into the main codebase.
 
 ### Conflict Resolution
@@ -53,9 +57,10 @@ Please follow our [code of conduct](CODE_OF_CONDUCT.md) in all of your interacti
 - Resolve conflicts.
 - Provide direction and set priorities for the project.
 
-### Committers
+### Triagers
 
-- Review and merge minor pull requests.
+- Organize the issue and pull request backlog with labels, milestones and assignees.
+- Respond to new issues and pull requests, asking clarifying questions and reproducing reported bugs.
 - Assist maintainers in project tasks.
 - Promote best practices within the community.
 
