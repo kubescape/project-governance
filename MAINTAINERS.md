@@ -14,7 +14,6 @@ The following table lists the Kubescape project core maintainers:
 The following table lists the Kubescape project triagers:
 | Name | GitHub | Organization | Added/Renewed On |
 | --- | --- | --- | --- |
-| [Amit Schendel](https://www.linkedin.com/in/matthias-bertschy-b427b815/) | [@amitschendel](https://github.com/amitschendel) | [ARMO](https://www.armosec.io/) | 2024-01-01 |
 
 Maintainers Emeritus:
 | Name | GitHub | Organization |
