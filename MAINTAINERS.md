@@ -14,6 +14,11 @@ The following table lists the Kubescape project core maintainers:
 The following table lists the Kubescape project triagers:
 | Name | GitHub | Organization | Added/Renewed On |
 | --- | --- | --- | --- |
+| [Mohit Yadav](https://www.linkedin.com/in/mohit-yadav-6b2319305/) | [@mohityadav8](https://github.com/mohityadav8) | Independent | 2026-09-16 |
+| [Lalit Kishore R](https://www.linkedin.com/in/lalit-kishore-r-20b740321/) | [@doraem-on](https://github.com/doraem-on) | Independent | 2026-09-16 |
+| [Khuswant Rajpurohit](https://www.linkedin.com/in/khuswant-rajpurohit-b749ba30a/) | [@khuswant18](https://github.com/khuswant18) | Independent | 2026-09-16 |
+| [Gauarv Chaudhary](https://www.linkedin.com/in/mrnobody-flex-680baa215/) | [@ANAMASGARD](https://github.com/ANAMASGARD) | Independent | 2026-09-16 |
+| [Anshul Patil](https://www.linkedin.com/in/anshul-patil-575006280/) | [@AnshulPatil2005](https://github.com/AnshulPatil2005) | Independent | 2026-09-16 |
 
 Maintainers Emeritus:
 | Name | GitHub | Organization |
