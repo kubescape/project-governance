@@ -1,8 +1,8 @@
 [![GitHub](https://img.shields.io/github/license/kubescape/kubescape)](https://github.com/kubescape/kubescape/blob/master/LICENSE)
-[![CNCF](https://shields.io/badge/CNCF-Sandbox%20project-blue?logo=linux-foundation&style=flat)](https://landscape.cncf.io/card-mode?project=sandbox&selected=kubescape)
+[![CNCF](https://shields.io/badge/CNCF-Incubating%20project-blue?logo=linux-foundation&style=flat)](https://landscape.cncf.io/?item=provisioning--security-compliance--kubescape)
 [![Stars](https://img.shields.io/github/stars/kubescape/kubescape?style=social)](https://github.com/kubescape/kubescape/stargazers)
 [![Twitter Follow](https://img.shields.io/twitter/follow/kubescape?style=social)](https://twitter.com/kubescape)
-[![Slack](https://img.shields.io/badge/slack-kubescape-blueviolet?logo=slack)](https://cloud-native.slack.com/archives/C04EY3ZF9GE)
+[![Slack](https://img.shields.io/badge/slack-kubescape-blueviolet?logo=slack)](https://cloud-native.slack.com/messages/kubescape)
 
 # Kubescape project information
 
@@ -40,10 +40,10 @@ The people that made this happen 😄
 
 ## License
 
-Copyright 2021-2024, the Kubescape Authors. All rights reserved. Kubescape is released under the Apache 2.0 license. See the [LICENSE](LICENSE) file for details.
+Copyright 2021-2026, the Kubescape Authors. All rights reserved. Kubescape is released under the Apache 2.0 license. See the [LICENSE](LICENSE) file for details.
 
-Kubescape is a [Cloud Native Computing Foundation (CNCF) sandbox project](https://www.cncf.io/sandbox-projects/) and was contributed by [ARMO](https://www.armosec.io/?utm_source=github&utm_medium=repository).
+Kubescape is a [Cloud Native Computing Foundation (CNCF) incubating project](https://www.cncf.io/projects/) and was contributed by [ARMO](https://www.armosec.io/?utm_source=github&utm_medium=repository).
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/cncf/artwork/master/other/cncf-sandbox/horizontal/color/cncf-sandbox-horizontal-color.svg" width="300" alt="CNCF Sandbox Project">
+    <img src="https://raw.githubusercontent.com/cncf/artwork/main/other/cncf-member/incubating/black/cncf-incubating-black.svg" width="300" alt="CNCF Incubating Project">
 </div>
