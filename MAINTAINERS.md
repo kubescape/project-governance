@@ -25,3 +25,16 @@ Maintainers Emeritus:
 | --- | --- | --- |
 | [Craig Box](https://www.linkedin.com/in/crbnz/) | [@craigbox](https://github.com/craigbox) | [Solo.io](https://www.solo.io/) |
 | [David Wertenteil](https://www.linkedin.com/in/david-wertenteil-0ba277b9) | [@dwertent](https://github.com/dwertent) | [Kaleido](https://www.kaleido.io/) |
+
+## Access to Sensitive Resources
+
+Access to sensitive project resources is restricted by role:
+
+| Resource / Permission | Role | Scope |
+| --- | --- | --- |
+| Organization and repository administration | Core Maintainers | All repositories |
+| Release-tag push and workflow execution | Core Maintainers | All repositories |
+| Release secrets and signing keys (CI/CD secrets, registry publishing) | Core Maintainers | Organization and repository secrets |
+| Issue and Pull Request triage (labels, milestones, assignees) | Triagers, Core Maintainers | All repositories |
+
+Triagers hold the GitHub *Triage* permission only, with no push or secret access.

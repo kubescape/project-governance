@@ -2,6 +2,7 @@
 
 * [Contributor Guide](#contributing-guide)
    * [Ways to contribute](#ways-to-contribute)
+  * [Reporting bugs](#reporting-bugs)
   * [Find an issue](#find-an-issue)
   * [Working on issues](#working-on-issues)
   * [Ask for help](#ask-for-help)
@@ -15,7 +16,7 @@ As you get started, you are in the best position to give us feedback on areas of
 our project that we need help with. 
 
 If anything doesn't make sense, or doesn't work when you run it, please open a
-bug report and let us know!
+[bug report](#reporting-bugs) and let us know!
 
 ### Code of conduct
 
@@ -36,6 +37,20 @@ We welcome many different types of contributions including:
 * Release management
 
 Not everything happens through a GitHub pull request. You can find all the ways to become active in the Kubescape community [here](COMMUNITY.md)  
+
+## Reporting bugs
+
+Report bugs as GitHub issues in the repository of the affected component. If you are not sure which component is affected, open the issue in [kubescape/kubescape](https://github.com/kubescape/kubescape/issues).
+
+Search the existing issues first, in case the bug has already been reported. A useful bug report includes:
+
+* the version you are running (the output of `kubescape version`, or the Helm chart version for the in-cluster operator) and your operating system
+* the command you ran, or the steps to reproduce the problem
+* what you expected to happen and what happened instead, with any error output or logs
+
+In kubescape/kubescape, the **Bug report** issue template asks for these details.
+
+Do not report security vulnerabilities in public issues. Follow [SECURITY.md](SECURITY.md) instead.
 
 ## Find an issue
 
@@ -69,14 +84,24 @@ The best way to reach us with a question when contributing is to ask on:
 
 ## Build and test locally
 
-Please follow the [instructions here](https://github.com/kubescape/kubescape/wiki/Building).
+For the Kubescape CLI, follow [Build from Source](https://github.com/kubescape/kubescape/blob/master/docs/installation.md#build-from-source). It lists the required Go version and tools.
 
 ## Pull Request process
 
-1. Ensure any install or build dependencies are removed before the end of the layer when running a  build.
-2. Update the README.md with details of changes to the interface, this includes new environment variables, exposed ports, useful file locations and container parameters.
-3. Open Pull Request to the `master`/`main` branch.
-4. We will merge the Pull Request once you have the sign-off.
+1. Open the Pull Request against the repository's default branch (`master` or `main`).
+2. Describe the change and link the issue it resolves, if applicable.
+3. A maintainer reviews the Pull Request and merges it once it meets the requirements below.
+
+### Requirements for contributions
+
+Before you ask for a review, make sure that:
+
+* every commit is signed off (see [Sign your commits](#sign-your-commits))
+* code changes come with tests that cover them
+* changes to the interface, such as new commands, flags, environment variables, exposed ports or output formats, are documented in the README or the docs
+* bigger changes were discussed in an issue first (see [Working on issues](#working-on-issues))
+
+A Pull Request is merged after a maintainer approves it; reviewers expect applicable CI checks to be green before approving. Some repositories require more than one approval.
 
 ## Sign your commits
 
