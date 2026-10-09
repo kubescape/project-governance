@@ -89,19 +89,19 @@ For the Kubescape CLI, follow [Build from Source](https://github.com/kubescape/k
 ## Pull Request process
 
 1. Open the Pull Request against the repository's default branch (`master` or `main`).
-2. Describe the change and link the issue it resolves.
+2. Describe the change and link the issue it resolves, if applicable.
 3. A maintainer reviews the Pull Request and merges it once it meets the requirements below.
 
 ### Requirements for contributions
 
-A Pull Request is merged when:
+Before you ask for a review, make sure that:
 
 * every commit is signed off (see [Sign your commits](#sign-your-commits))
 * code changes come with tests that cover them
-* all CI checks on the Pull Request pass
 * changes to the interface, such as new commands, flags, environment variables, exposed ports or output formats, are documented in the README or the docs
 * bigger changes were discussed in an issue first (see [Working on issues](#working-on-issues))
-* a maintainer has approved it
+
+A Pull Request is merged after a maintainer approves it; reviewers expect applicable CI checks to be green before approving. Some repositories require more than one approval.
 
 ## Sign your commits
 
