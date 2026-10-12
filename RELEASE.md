@@ -6,10 +6,9 @@ This document outlines the release process for Kubescape.
 
 ## Release Schedule
 
-Kubescape follows a regular release schedule:
-- **Minor Releases**: Every 6-8 weeks.
-- **Patch Releases**: As needed for critical fixes.
-- **Major Releases**: Planned for significant architectural changes or new features.
+Kubescape does not follow a fixed release schedule. The maintainers publish a release when changes are ready to ship:
+- **Patch Releases**: The most common release, published as needed.
+- **Major Releases**: Reserved for breaking changes.
 
 ## Release Steps
 
