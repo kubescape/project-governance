@@ -17,6 +17,10 @@
 If you have a use case to solve with Kubescape we suggest you review the use-case documentation at [kubescape.io](https://kubescape.io).
 The list of official adopters can be found [here](ADOPTERS.md). If you are a Kubescape user, feel free to open a PR to add yourself as an adopter.
 
+## Roadmap
+
+Where the project is going over the next year, with a maintainer sponsor per item, is described in the [roadmap](ROADMAP.md). If an item there interests you, its sponsor is the person to talk to.
+
 ## Getting involved in the project
 
 * [Community](COMMUNITY.md)
