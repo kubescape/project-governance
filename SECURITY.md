@@ -1,3 +1,5 @@
+CRA stewardship: This project is supported under the Linux Foundation CRA stewardship framework, as described at https://www.linuxfoundation.org/security. Security vulnerabilities should be reported through the mechanisms described below, which we will coordinate with our CRA steward. For actively exploited vulnerabilities and severe incidents that may require CRA escalation, please use the project's emergency security reporting mechanisms as appropriate.
+
 # Reporting Security Issues
 
 To report a security issue or vulnerability, submit a [private vulnerability report via GitHub](https://github.com/kubescape/kubescape/security/advisories/new) to the repository maintainers with a description of the issue, the steps you took to create the issue, affected versions, and, if known, mitigations for the issue.
