@@ -6,6 +6,7 @@
   * [Find an issue](#find-an-issue)
   * [Working on issues](#working-on-issues)
   * [Ask for help](#ask-for-help)
+  * [CRA stewardship and security incident escalation](#cra-stewardship-and-security-incident-escalation)
   * [Build and test locally](#build-and-test-locally)
   * [Pull request process](#pull-request-process)
   * [Sign your commits](#sign-your-commits)
@@ -81,6 +82,21 @@ The best way to reach us with a question when contributing is to ask on:
 
 * The original github issue
 * The kubescape-dev Slack channel
+
+## CRA stewardship and security incident escalation
+
+For projects supported under the Linux Foundation CRA stewardship framework, certain security events must be escalated to the Linux Foundation steward.
+
+Escalate to steward@linuxfoundation.org when either of the following applies:
+
+- **Exploited vulnerabilities:** There is reliable evidence that a malicious actor has exploited the vulnerability, whether the exploitation is ongoing or has stopped.
+- **Severe security incidents:** The security of the project's own IT infrastructure has been compromised.
+
+Ordinary vulnerabilities without reliable evidence of exploitation (past or present) do not, by themselves, require CRA escalation.
+
+Escalation must not delay vulnerability remediation. Continue the project's established security response and remediation process while the escalation is handled.
+
+For vulnerability reporting instructions, see [SECURITY.md](SECURITY.md).
 
 ## Build and test locally
 
