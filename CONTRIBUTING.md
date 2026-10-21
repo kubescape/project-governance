@@ -74,10 +74,10 @@ For projects supported under the Linux Foundation CRA stewardship framework, cer
 
 Escalate to steward@linuxfoundation.org when either of the following applies:
 
-- **Actively exploited vulnerabilities:** There is reliable evidence that a vulnerability is being actively exploited.
+- **Exploited vulnerabilities:** There is reliable evidence that a malicious actor has exploited the vulnerability, whether the exploitation is ongoing or has stopped.
 - **Severe security incidents:** The security of the project's own IT infrastructure has been compromised.
 
-Ordinary vulnerabilities without evidence of active exploitation do not, by themselves, require CRA escalation.
+Ordinary vulnerabilities without reliable evidence of exploitation (past or present) do not, by themselves, require CRA escalation.
 
 Escalation must not delay vulnerability remediation. Continue the project's established security response and remediation process while the escalation is handled.
 
