@@ -3,7 +3,8 @@
 This document defines the security boundaries of the Kubescape project.
 It applies to all repositories in the kubescape GitHub organization.
 Maintainers use it to decide whether a report is a vulnerability.
-If a report assumes a weaker attacker than this model, it is not a vulnerability.
+If an attack only works for someone this model already trusts
+(for example, an authenticated cluster user), it is not a vulnerability.
 
 ## Core assumption
 
