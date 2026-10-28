@@ -43,11 +43,45 @@ They are not vulnerabilities in us, but they weaken user security.
 ## What is NOT a vulnerability under this model
 
 - "A cluster user can read CRD data" — yes, by design. Guard it with RBAC.
-- "A pod can query the storage APIService" — in-cluster workloads are not our attackers.
+- "A pod can query the storage APIService" — not a vuln while RBAC is enforced.
+  If a path bypasses RBAC (e.g. direct access to a component endpoint), it IS in scope.
 - "Scan results contain sensitive cluster info" — results go where the operator sends them.
 - "Component X has permission Y" — only a finding if Y exceeds documented need.
 - A local user on the scan machine reading files — local security is the operator's job.
 - Missing hardening (SBOM, signing, docs, scorecard checks) — improvement, not a vuln.
+
+### Open ports inventory
+
+Snapshot of in-cluster listeners, from the Helm chart and component source.
+**This inventory is correct only for today.** The project plans to move all
+inter-component communication to CRDs; direct pod-to-pod ports will be removed.
+
+Sensitivity levels:
+
+- **L1 — operational**: health, readiness, metrics. No cluster content.
+- **L2 — service**: accepts work or serves component data. Abuse wastes resources or leaks component-level info.
+- **L3 — sensitive**: can read cluster-wide security data or change cluster state.
+
+| Component | Port | Purpose | Necessary? | Level |
+|---|---|---|---|---|
+| kubescape (ksserver) | 8080 | HTTP scan API (`KS_API_TOKEN` opt-in) | Only with in-cluster scanning | L3 |
+| operator | 4002 | REST API, receives commands | Yes | L3 |
+| operator | 8000 | Health/readiness | Yes | L1 |
+| operator | 8443 | Admission webhook (TLS, called by apiserver) | Only with admission enabled | L2 |
+| operator | 6060 | pprof debug, binds all interfaces | No — disable in prod | L2 |
+| storage | 443 | Aggregated API server (TLS) | Yes | L3 |
+| storage | 6060 | pprof debug, binds all interfaces | No — disable in prod | L2 |
+| kubevuln | 8080 | Scan API (receives scan jobs) | Yes | L2 |
+| node-agent | 8080 | Prometheus metrics | Only with monitoring | L1 |
+| node-agent | 7888 | Health/liveness | Yes | L1 |
+| node-agent | 6060 | pprof, localhost-only | Debug only | L1 |
+| synchronizer | 8089→8080 | Sync endpoint (relays cluster data to backend) | Only with backend | L3 |
+| synchronizer | 7888 | Health/liveness | Yes | L1 |
+| synchronizer | config | Prometheus metrics (optional) | Only with monitoring | L1 |
+| grype-offline-db | 8080 | Serves vulnerability DB files | Only air-gapped | L1 |
+| prometheus-exporter | 8080 | Metrics incl. vulnerability counts | Only with monitoring | L2 |
+
+Action items from this inventory: the all-interface pprof listeners (operator, storage) should bind localhost like node-agent's, and NetworkPolicies should default-deny everything except the "Yes" rows.
 
 ## Data stored in CRDs
 

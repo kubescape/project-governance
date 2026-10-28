@@ -10,8 +10,10 @@ The baseline is the [threat model](threat-model.md).
 Ask: who is the attacker, and what access do they already have?
 
 - No attacker named → not a vulnerability. Reclassify.
-- Attacker is a cluster user with kubectl → trusted by our model. Reclassify.
-- Attacker is a workload/pod in the cluster → out of scope by our model. Reclassify.
+- Attacker is a cluster user or workload acting within their RBAC → trusted. Reclassify.
+- Attacker is a cluster user or workload gaining access **beyond** their RBAC through a Kubescape component → **in scope**. Continue to Step 2.
+  - Exception: if the gain relies only on reaching an unauthenticated in-cluster endpoint, this is the documented known limitation → hardening, not a vuln.
+    See "Known limitations" in the [threat model](threat-model.md).
 - Attacker is a local user/process on the scan machine → out of scope. Reclassify.
 - Attacker controls input to `scan` (chart, manifest, repo, image) → **in scope**.
 - Attacker is on the network / supply chain → **in scope**.
@@ -73,8 +75,9 @@ Ask: what does the attacker gain that they did not already have?
 > Relabeling as security-hardening and keeping it open.
 
 **Declining an advisory:**
-> Thanks for the report. Kubescape's threat model treats authenticated cluster
-> access as trusted and local machine security as the operator's responsibility,
+> Thanks for the report. Kubescape's threat model treats access already granted
+> by RBAC as trusted, and local machine security as the operator's responsibility.
+> Your report does not show an actor gaining access beyond what they already hold,
 > so we are not treating this as an exploitable vulnerability.
 > It is a valid hardening improvement — we will fix it in a public issue/PR
 > and credit you there. Closing this advisory without a CVE.
