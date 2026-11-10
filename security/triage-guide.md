@@ -12,9 +12,9 @@ Ask: who is the attacker, and what access do they already have?
 - No attacker named → not a vulnerability. Reclassify.
 - Attacker is a cluster user or workload acting within their RBAC → trusted. Reclassify.
 - Attacker is a cluster user or workload gaining access **beyond** their RBAC through a Kubescape component → **in scope**. Continue to Step 2.
-- In-cluster HTTP APIs require a service-account token checked against RBAC (chart ≥ 1.42.0). A route that skips the check is an RBAC bypass.
-- Reports against older charts/images or `global.apiAuth.enabled=false` are outdated or opted-out configurations, not vulnerabilities.
-- Metrics routes are unauthenticated by design; see "Known limitations" in the [threat model](threat-model.md).
+  - In-cluster HTTP APIs require a service-account token checked against RBAC (chart ≥ 1.42.0). A route that skips the check is an RBAC bypass.
+  - Reports against older charts/images or `global.apiAuth.enabled=false` are outdated or opted-out configurations, not vulnerabilities.
+  - Metrics routes are unauthenticated by design; see "Known limitations" in the [threat model](threat-model.md).
 - Attacker is a local user/process on the scan machine → out of scope. Reclassify.
 - Attacker controls input to `scan` (chart, manifest, repo, image) → **in scope**.
 - Attacker is on the network / supply chain → **in scope**.
@@ -37,7 +37,7 @@ Ask: what does the attacker gain that they did not already have?
 |---|---|---|
 | Vulnerability | Steps 1+2 both pass | Private report, fix, advisory |
 | Hardening | Real risk reduction, no concrete attack | Public issue, label `security-hardening` |
-| Quality | False negatives, wrong results | Label `bug`, prioritize by user impact |
+| Quality | False negatives, wrong results, evidence integrity without an attacker | Label `bug`, prioritize by user impact |
 | Feature | New control, new capability, docs | Label `feature`, normal backlog |
 
 ## Step 4: Route
@@ -62,6 +62,7 @@ Ask: what does the attacker gain that they did not already have?
 - Scanning a file/chart does something besides reading it.
 - An in-cluster API route accepts a request without a valid service-account token.
 - A caller can act beyond the verbs/resources its Role grants.
+- A probe or metrics port serves anything besides probes or metrics.
 - A default install grants our components more RBAC than the docs claim.
 - Release artifacts can be altered without detection.
 - The tool reports "pass" for a config that Kubernetes treats as allowed/exploitable.
@@ -95,4 +96,8 @@ Ask: what does the attacker gain that they did not already have?
 
 Issues land on many repos (node-agent, operator, storage, helm-charts, regolibrary...).
 Triage with the same model everywhere.
-Vulnerabilities from any repo route to the kubescape/kubescape advisory flow.
+
+Private vulnerability reporting is enabled only on kubescape/kubescape.
+Reporters file there regardless of the affected component; this is expected.
+Once triaged as a vulnerability in another component, a maintainer opens a draft advisory on the owning repo (copying the report and crediting the reporter), then closes the kubescape/kubescape one with a pointer.
+The advisory is published from the owning repo so the affected Go module and version range are correct.

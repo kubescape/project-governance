@@ -46,6 +46,7 @@ They are not vulnerabilities in us, but they weaken user security.
 - "A pod can call a Kubescape API" — only with a service-account token that RBAC has bound to that action. If a route accepts calls without one, it IS in scope.
 - "Scan results contain sensitive cluster info" — results go where the operator sends them.
 - "Component X has permission Y" — only a finding if Y exceeds documented need.
+- An actor suppresses an alert on an action their RBAC already allows, they gained nothing. Detection opt-outs living in the wrong place is hardening.
 - A local user on the scan machine reading files — local security is the operator's job.
 - Missing hardening (SBOM, signing, docs, scorecard checks) — improvement, not a vuln.
 
@@ -74,6 +75,7 @@ Consequences for triage:
 - A compromised caller (operator, node-agent) keeps its Role's permissions.
   Narrowing those Roles is a hardening exercise.
 - NetworkPolicy enforcement depends on the CNI; it is defense in depth, not the control.
+- Probe ports (`/livez`, `/readyz`) are unauthenticated by design and must serve **only** probes. Any other handler reachable on them (debug, pprof, metrics) is a finding. Importing `net/http/pprof` registers on `DefaultServeMux`;  servers must use their own mux so this cannot leak onto a probe port.
 
 ### Open ports inventory
 
@@ -101,8 +103,8 @@ Sensitivity levels:
 | kubevuln | 8080 | Scan API (`/v1/*`, `/v1/diagnostics`) | SA token + RBAC | Yes | L2 |
 | kubevuln | 8080 | `/metrics` | None (by design) | Only with monitoring | L1 |
 | node-agent | 8080 | Prometheus metrics | None | Only with monitoring | L1 |
-| node-agent | 7888 | Health/liveness | None (probe) | Yes | L1 |
-| node-agent | 6060 | pprof, localhost-only | None | Debug only | L1 |
+| node-agent | 7888 | Health/liveness (`/livez`, `/readyz`) | None (probe) | Yes | L1 |
+| node-agent | 6060 | pprof, localhost-only (`ENABLE_PROFILER`) | None | Debug only | L1 |
 | synchronizer | 8089→8080 | Ingest endpoint (runtime alerts, profiles → backend) | SA token + RBAC | Only with backend | L3 |
 | synchronizer | 7888 | Health/liveness | None (probe) | Yes | L1 |
 | synchronizer | config | Prometheus metrics (optional) | None | Only with monitoring | L1 |
