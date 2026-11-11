@@ -9,9 +9,9 @@ If an attack only works for someone this model already trusts
 ## Core assumption
 
 Cluster access requires authenticated kubectl/API access.
-Anyone with API access is trusted at the level their RBAC grants.
-Workloads inside the cluster are not treated as hostile by default.
-Protecting the cluster from its own workloads is the operator's responsibility.
+Anyone with API access (users or workloads) is trusted at the level their RBAC grants, and no further.
+Kubescape does not defend a cluster against actors doing what their RBAC already allows; that is the operator's responsibility.
+Kubescape does enforce its own boundary: every trigger must come from an authenticated, RBAC-authorized source. A path that lets an actor exceed their RBAC is a vulnerability.
 
 ## Trust boundaries that DO matter
 
@@ -61,9 +61,7 @@ Consequences for triage:
 
 - A route that accepts requests without a valid token, or lets a caller act
   beyond what its Role grants, is an **RBAC bypass → vulnerability**.
-- Reports against chart < 1.42.0, images pinned before the enforcing release, or
-  deployments with `global.apiAuth.enabled=false` are not vulnerabilities.
-  The user is running an outdated or opted-out configuration.
+- Users should run the up to date versions, so reports against chart < 1.42.0, images pinned before the enforcing release, or deployments with `global.apiAuth.enabled=false` are not vulnerabilities. The user is running an outdated or opted-out configuration.
 
 ### Known limitations
 

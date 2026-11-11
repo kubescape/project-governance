@@ -79,7 +79,7 @@ Ask: what does the attacker gain that they did not already have?
 > Relabeling as security-hardening and keeping it open.
 
 **Outdated or opted-out configuration:**
-> Thanks for the report. In-cluster API authentication is enforced since chart
+> Thanks for the report. In-cluster API authentication enforcement is fixed since chart
 > kubescape-operator 1.42.0 (service-account tokens + RBAC, on by default).
 > The behavior you describe applies to older versions or to deployments that set
 > `global.apiAuth.enabled=false`. Please upgrade; we are not issuing an advisory.
