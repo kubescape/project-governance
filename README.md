@@ -33,6 +33,12 @@ Where the project is going over the next year, with a maintainer sponsor per ite
 * [Maintainers](MAINTAINERS.md)
 * [License](LICENSE)
 
+## Security
+
+* [Reporting security issues](SECURITY.md)
+* [Threat model](security/threat-model.md)
+* [Triage guide](security/triage-guide.md)
+
 
 ## Wall of fame
 

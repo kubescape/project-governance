@@ -6,4 +6,6 @@ To report a security issue or vulnerability, submit a [private vulnerability rep
 
 The maintainers will respond within 7 working days of your report. If the issue is confirmed as a vulnerability, we will open a Security Advisory and acknowledge your contributions as part of it. This project follows a 90 day disclosure timeline.
 
+Before reporting, please review the project's [threat model](security/threat-model.md), which defines what the project treats as a vulnerability. Maintainers triage reports according to the [triage guide](security/triage-guide.md).
+
 Other contacts: cncf-kubescape-maintainers@lists.cncf.io
