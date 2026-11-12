@@ -35,10 +35,17 @@ node-agent runs with eBPF and host-level access. The operator can patch workload
 A bug letting a lower-privileged actor leverage these components is in scope.
 Our components should follow least privilege even inside the trust boundary.
 
-### 4. Scanner correctness (false negatives)
-Kubescape is a security tool. A wrong "all clear" is a security-relevant defect.
-False negatives in RBAC analysis, PSS, or controls deserve priority.
-They are not vulnerabilities in us, but they weaken user security.
+### 4. Detection and policy content is not a vulnerability surface
+Kubescape ships security content: configuration scan controls (Rego in regolibrary), admission policies (CEL in cel-admission-library), and runtime detection rules (rulelibrary, node-agent). We work hard to make this content accurate, but gaps in it are not vulnerabilities in Kubescape. This includes:
+
+- false negatives or false positives in a control, policy, or rule;
+- an attack technique, payload, or configuration a rule does not catch (detection evasion);
+- an exception or exclusion that matches more or less than intended;
+- a rule that can be bypassed by an actor acting within their RBAC.
+
+We do not open security advisories or CVEs for these. Please report them as regular public issues or, better, send a pull request; *improving detection coverage is one of the most valuable contributions to the project.*
+
+This covers the *content* of rules, not the engines that run them. A crafted input that makes the scanner, policy engine, or node-agent execute code, write files, leak credentials, or escalate privileges is still in scope (see "Untrusted scan inputs" above).
 
 ## What is NOT a vulnerability under this model
 
@@ -46,7 +53,6 @@ They are not vulnerabilities in us, but they weaken user security.
 - "A pod can call a Kubescape API" — only with a service-account token that RBAC has bound to that action. If a route accepts calls without one, it IS in scope.
 - "Scan results contain sensitive cluster info" — results go where the operator sends them.
 - "Component X has permission Y" — only a finding if Y exceeds documented need.
-- An actor suppresses an alert on an action their RBAC already allows, they gained nothing. Detection opt-outs living in the wrong place is hardening.
 - A local user on the scan machine reading files — local security is the operator's job.
 - Missing hardening (SBOM, signing, docs, scorecard checks) — improvement, not a vuln.
 
@@ -134,7 +140,7 @@ Without a bypass, it is a feature request for finer-grained access, at most.
 
 - Critical: RCE or privilege escalation from untrusted scan input or network.
 - High: supply-chain compromise path; RBAC bypass; our component escalates an attacker.
-- Medium: reachable dependency CVE; excessive default permissions; false negatives.
+- Medium: reachable dependency CVE; excessive default permissions.
 - Low: hardening gaps, hygiene, docs, non-reachable CVEs.
 
 ## Reporting

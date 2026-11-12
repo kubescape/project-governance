@@ -37,7 +37,7 @@ Ask: what does the attacker gain that they did not already have?
 |---|---|---|
 | Vulnerability | Steps 1+2 both pass | Private report, fix, advisory |
 | Hardening | Real risk reduction, no concrete attack | Public issue, label `security-hardening` |
-| Quality | False negatives, wrong results, evidence integrity without an attacker | Label `bug`, prioritize by user impact |
+| Quality | Detection content gaps (boundary 4), wrong results, evidence integrity without an attacker | Label `bug`; welcome a PR |
 | Feature | New control, new capability, docs | Label `feature`, normal backlog |
 
 ## Step 4: Route
@@ -54,6 +54,7 @@ Ask: what does the attacker gain that they did not already have?
 - The report is a scanner/scorecard output with no attack scenario.
 - The fix is "add a doc" or "add a badge".
 - The report proposes a new Kubescape control. That is a feature for regolibrary.
+- The report is about what a control, policy, or rule does or does not catch. That is detection content (threat model, boundary 4), not a vulnerability.
 - The CVE is in a dependency but the vulnerable function is unreachable.
 - The prerequisite is the user loading an attacker-supplied artifact by choice.
 
@@ -65,7 +66,6 @@ Ask: what does the attacker gain that they did not already have?
 - A probe or metrics port serves anything besides probes or metrics.
 - A default install grants our components more RBAC than the docs claim.
 - Release artifacts can be altered without detection.
-- The tool reports "pass" for a config that Kubernetes treats as allowed/exploitable.
 
 ## Canned responses
 
@@ -83,6 +83,13 @@ Ask: what does the attacker gain that they did not already have?
 > kubescape-operator 1.42.0 (service-account tokens + RBAC, on by default).
 > The behavior you describe applies to older versions or to deployments that set
 > `global.apiAuth.enabled=false`. Please upgrade; we are not issuing an advisory.
+
+**Detection content (control, policy, or rule gap):**
+> Thanks — this is a gap in Kubescape's detection content, not a vulnerability in
+> Kubescape itself (see the threat model, boundary 4). We don't issue advisories
+> for these. Please open a public issue or, better, a pull request with the fix
+> and a test; improving detection coverage is one of the most valuable
+> contributions to the project, and we'll credit you there.
 
 **Declining an advisory:**
 > Thanks for the report. Kubescape's threat model treats access already granted
