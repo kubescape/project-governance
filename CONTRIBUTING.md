@@ -78,7 +78,8 @@ and larger changes should be discussed with maintainers first.
 - Wait until a maintainer removes `status: needs-triage` before starting work.
 - Ask a maintainer to assign you. **Self-assignment is not allowed**, including
   `/assign-me`, assigning yourself through GitHub, or a maintainer assigning
-  themselves. Another maintainer must make the assignment.
+  themselves. Another maintainer must make the assignment. Creating the issue
+  does not allow self-assignment; a maintainer may assign its author after triage.
 - Each contributor may hold at most **three active issue assignments per
   repository**. This is not an organization-wide total and not an open-PR cap.
   At most two open assignments may carry each beginner label (`good first issue`
@@ -87,24 +88,32 @@ and larger changes should be discussed with maintainers first.
   release their own work with `/unassign-me`. Coordinate with existing assignees
   before taking over an issue.
 - Share progress or open a linked draft PR. Inactive assignments receive a
-  reminder after four days and may be released after eight days, with at least
-  one day after the warning. A linked open PR or `📌 Pinned` protects the
+  reminder after four days and may be released after 14 days without progress,
+  with at least one day after the warning. A linked open PR or `📌 Pinned` protects the
   assignment; progress comments by the assignee reset its inactivity timer.
 
 ### Linking and maintaining a PR
 
 Link the assigned, triaged issue with `Fixes #number`, `Closes #number`,
 `Resolves #number`, or `Refs #number` for partial work. The **Contribution policy**
-status checks the issue link, triage and assignment. A fixing PR for an untriaged
-issue is closed automatically; a partial `Refs` PR stays open with a failed
-check. After triage and assignment, reopen the same PR.
+status checks the issue link, triage, assignment and duplicate PRs. A fixing PR
+for an untriaged issue is automatically closed. PRs linked to an issue not
+assigned to their author also close, including `Refs` PRs. Missing issue links
+fail the check.
+
+Only one open linked PR per issue is allowed: the earliest PR from a current
+assignee is kept and later ones close with a link to it. Both `Fixes` and `Refs`
+count, including drafts. Earlier PRs from non-assignees do not block the assignee.
+After triage and assignment, reopen the same PR if no earlier linked PR covers
+the issue. Split independent work into separate issues. These checks run when
+GitHub dispatches the workflow; closure is not synchronous with PR submission.
 
 A PR with outstanding changes requested by a human maintainer receives a stale
 warning after three inactive days. It may close seven days after that warning
 if the author has not replied or pushed changes. PRs waiting for their first
 review are not closed. A new reply, commit, approval, dismissal of the change
 request or `📌 Pinned` protects against closure. Closing an unmerged PR releases
-its author's linked fixing-issue assignment unless another open fixing PR still
+its author's linked fixing-issue assignment unless another open linked PR still
 uses it or a later reassignment has occurred.
 
 Maintainer and bot PRs are exempt from automated issue-link checks and closure;
