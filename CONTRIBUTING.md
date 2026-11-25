@@ -96,8 +96,9 @@ and larger changes should be discussed with maintainers first.
 ### Linking and maintaining a PR
 
 Link the assigned, triaged issue with `Fixes #number`, `Closes #number`,
-`Resolves #number`, or `Refs #number` for partial work. The **Contribution policy**
-status checks the issue link, triage, assignment and duplicate PRs. A fixing PR
+`Resolves #number`, or `Refs #number` for partial work. Colon forms such as
+`Fixes: #number` also work. The **Contribution policy**
+check verifies the issue link, triage, assignment and duplicate PRs. A fixing PR
 for an untriaged issue is automatically closed. PRs linked to an issue not
 assigned to their author also close, including `Refs` PRs. Missing issue links
 fail the check.
@@ -126,6 +127,20 @@ The shared implementation and activation steps live in
 [kubescape/workflows](https://github.com/kubescape/workflows/blob/main/docs/contribution-policy.md).
 Installing a shared action does not automatically install its caller in every
 repository: maintainers roll it out and configure the required status explicitly.
+
+### Check results and recovery
+
+The automation updates the **Contribution policy** check on the PR's head commit.
+All open PRs sharing that commit must pass; an exempt or valid sibling cannot
+replace another PR's failure. A sibling may remain blocked until the failing PR
+is fixed or closed and the check runs again. Validate this with fork PRs during
+the Kubevuln pilot before enabling the required check.
+
+Pre-rollout assignments and assignments with unknown start times are preserved
+when a newer PR closes. Interrupted assignment cleanup is retried using
+`status: policy-release-pending`; create that label alongside the other policy
+labels before activation. Independent PR checks continue after an API failure,
+and the workflow reports the failures at the end.
 
 ## Ask for help
 
