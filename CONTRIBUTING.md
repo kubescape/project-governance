@@ -63,13 +63,14 @@ Contributors should pay attention to three types of labels:
 3. [help wanted](https://github.com/orgs/kubescape/projects/4/views/5?sliceBy%5Bvalue%5D=help+wanted) - these are issues that require knowledge beyond core Kubescape functionality.
 
 Once you see an issue that you'd like to work on, please post a comment saying
-that you want to work on it and assign yourself.
+that you want to work on it and ask a maintainer to assign you after triage.
 
 ## Working on issues
 
 The contribution policy below applies across Kubescape repositories after each
-repository's maintainer-configured rollout date. Existing PRs and older
-assignments are exempt from automatic closure and expiry. Before activation,
+repository's maintainer-configured `CONTRIBUTION_POLICY_START` timestamp (ISO UTC).
+See the [activation instructions](https://github.com/kubescape/workflows/blob/main/docs/contribution-policy.md#organization-rollout).
+Existing PRs and older assignments are exempt from automatic closure and expiry. Before activation,
 the existing process remains in effect: small changes may be proposed directly,
 and larger changes should be discussed with maintainers first.
 
