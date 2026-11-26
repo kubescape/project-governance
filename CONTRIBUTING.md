@@ -74,6 +74,16 @@ Existing PRs and older assignments are exempt from automatic closure and expiry.
 the existing process remains in effect: small changes may be proposed directly,
 and larger changes should be discussed with maintainers first.
 
+### Staged adoption
+
+Merge this policy proposal first, then review the shared implementation in
+[kubescape/workflows#110](https://github.com/kubescape/workflows/pull/110).
+After that review and merge, validate the workflow in
+[kubescape/kubevuln#1270](https://github.com/kubescape/kubevuln/pull/1270).
+Keep other repositories disabled until maintainers accept the pilot.
+This proposal does not install or activate a caller workflow.
+Automatic reviews remain enabled as part of the normal maintainer routine.
+
 ### Triage and assignment
 
 - Wait until a maintainer removes `status: needs-triage` before starting work.
