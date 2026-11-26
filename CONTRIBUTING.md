@@ -63,18 +63,94 @@ Contributors should pay attention to three types of labels:
 3. [help wanted](https://github.com/orgs/kubescape/projects/4/views/5?sliceBy%5Bvalue%5D=help+wanted) - these are issues that require knowledge beyond core Kubescape functionality.
 
 Once you see an issue that you'd like to work on, please post a comment saying
-that you want to work on it and assign yourself.
+that you want to work on it and ask a maintainer to assign you after triage.
 
 ## Working on issues
-We categorize contributions into two:
-* Small code changes or fixes, whose scope is limited to documentation, minor fixes, development that involves no more than a file or two.
-* Complex features and improvements, with potentially unlimited scope
 
-If you are working on a small change, feel free to open a Pull Request.
+The contribution policy below applies across Kubescape repositories after each
+repository's maintainer-configured `CONTRIBUTION_POLICY_START` timestamp (ISO UTC).
+See the [activation instructions](https://github.com/kubescape/workflows/blob/main/docs/contribution-policy.md#organization-rollout).
+Existing PRs and older assignments are exempt from automatic closure and expiry. Before activation,
+the existing process remains in effect: small changes may be proposed directly,
+and larger changes should be discussed with maintainers first.
 
-If you want to work on a bigger change, please discuss the change you are plannning with the community and the maintainers. In this case, opening an issue in the  applicable repository and raising the improvement you want to add in the kubescape-dev slack or community meeting is a great start!
+### Staged adoption
 
-Getting sign-off before embarking on a big change is important so the maintainers can help guide you in the right direction. 
+Merge this policy proposal first, then review the shared implementation in
+[kubescape/workflows#110](https://github.com/kubescape/workflows/pull/110).
+After that review and merge, validate the workflow in
+[kubescape/kubevuln#1270](https://github.com/kubescape/kubevuln/pull/1270).
+Keep other repositories disabled until maintainers accept the pilot.
+This proposal does not install or activate a caller workflow.
+Automatic reviews remain enabled as part of the normal maintainer routine.
+
+### Triage and assignment
+
+- Wait until a maintainer removes `status: needs-triage` before starting work.
+- Ask a maintainer to assign you. **Self-assignment is not allowed**, including
+  `/assign-me`, assigning yourself through GitHub, or a maintainer assigning
+  themselves. Another maintainer must make the assignment. Creating the issue
+  does not allow self-assignment; a maintainer may assign its author after triage.
+- Each contributor may hold at most **three active issue assignments per
+  repository**. This is not an organization-wide total and not an open-PR cap.
+  At most two open assignments may carry each beginner label (`good first issue`
+  or `good second issue`).
+- Maintainers can use `/assign @user` and `/unassign @user`. Contributors can
+  release their own work with `/unassign-me`. Coordinate with existing assignees
+  before taking over an issue.
+- Share progress or open a linked draft PR. Inactive assignments receive a
+  reminder after four days and may be released after 14 days without progress,
+  with at least one day after the warning. A linked open PR or `📌 Pinned` protects the
+  assignment; progress comments by the assignee reset its inactivity timer.
+
+### Linking and maintaining a PR
+
+Link the assigned, triaged issue with `Fixes #number`, `Closes #number`,
+`Resolves #number`, or `Refs #number` for partial work. Colon forms such as
+`Fixes: #number` also work. The **Contribution policy**
+check verifies the issue link, triage, assignment and duplicate PRs. A fixing PR
+for an untriaged issue is automatically closed. PRs linked to an issue not
+assigned to their author also close, including `Refs` PRs. Missing issue links
+fail the check.
+
+Only one open linked PR per issue is allowed: the earliest PR from a current
+assignee is kept and later ones close with a link to it. Both `Fixes` and `Refs`
+count, including drafts. Earlier PRs from non-assignees do not block the assignee.
+After triage and assignment, reopen the same PR if no earlier linked PR covers
+the issue. Split independent work into separate issues. These checks run when
+GitHub dispatches the workflow; closure is not synchronous with PR submission.
+
+A PR with outstanding changes requested by a human maintainer receives a stale
+warning after three inactive days. It may close seven days after that warning
+if the author has not replied or pushed changes. PRs waiting for their first
+review are not closed. A new reply, commit, approval, dismissal of the change
+request or `📌 Pinned` protects against closure. Closing an unmerged PR releases
+its author's linked fixing-issue assignment unless another open linked PR still
+uses it or a later reassignment has occurred.
+
+Maintainer and bot PRs are exempt from automated issue-link checks and closure;
+this does not permit self-assignment. Repositories with issues disabled skip
+issue-link and assignment requirements, but use the same requested-changes
+inactivity process. Archived repositories are not modified by rollout.
+
+The shared implementation and activation steps live in
+[kubescape/workflows](https://github.com/kubescape/workflows/blob/main/docs/contribution-policy.md).
+Installing a shared action does not automatically install its caller in every
+repository: maintainers roll it out and configure the required status explicitly.
+
+### Check results and recovery
+
+The automation updates the **Contribution policy** check on the PR's head commit.
+All open PRs sharing that commit must pass; an exempt or valid sibling cannot
+replace another PR's failure. A sibling may remain blocked until the failing PR
+is fixed or closed and the check runs again. Validate this with fork PRs during
+the Kubevuln pilot before enabling the required check.
+
+Pre-rollout assignments and assignments with unknown start times are preserved
+when a newer PR closes. Interrupted assignment cleanup is retried using
+`status: policy-release-pending`; create that label alongside the other policy
+labels before activation. Independent PR checks continue after an API failure,
+and the workflow reports the failures at the end.
 
 ## Ask for help
 
